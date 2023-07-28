@@ -9,9 +9,8 @@ namespace TestTask
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            bool v = (bool)value;
-
-            return v ? Visibility.Visible : Visibility.Collapsed;
+            bool? v = value as bool?;
+            return v == true ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
